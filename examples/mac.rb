@@ -24,8 +24,8 @@ macs.each do |mac|
   puts mac.to_yaml
 end
 
-puts '------------------------'
-
-puts Ucsman::MacPool.get_mac_pool(ucs, 'org-root/mac-pool-mac-pool-1').to_yaml
+puts Ucsman::MacPool.get_mac_pool(
+  ucs, 'org-root/mac-pool-mac-pool-1'
+).to_yaml
 
 ucs.logout
