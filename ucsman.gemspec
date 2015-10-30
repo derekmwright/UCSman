@@ -7,11 +7,11 @@ Gem::Specification.new do |spec|
   spec.name          = 'ucsman'
   spec.version       = Ucsman::VERSION
   spec.authors       = ['Derek Wright']
-  spec.email         = ['dmwright1@paychex.com']
+  spec.email         = ['derekmwright@gmail.com']
 
-  spec.summary       = 'A ruby interface to UCS Manager'
-  spec.description   = 'A ruby interface to UCS Manager'
-  spec.homepage      = ''
+  spec.summary       = 'A Ruby interface to UCS Manager'
+  spec.description   = 'A Ruby interface to UCS Manager'
+  spec.homepage      = 'https://github.com/derekmwright/UCSman'
   spec.license       = 'MIT'
 
   if spec.respond_to?(:metadata)
