@@ -13,10 +13,12 @@ module Ucsman
 
     # Test for parameters required to instantiate
     def required_params(params)
+      params[:verify_ssl] = params[:verify_ssl] || true
       required_params = [
         :username,
         :password,
-        :hostname
+        :hostname,
+        :verify_ssl
       ]
       required_params.map do |param|
         unless params.key? param
@@ -101,17 +103,25 @@ module Ucsman
     end
 
     # Validate parameters and connect to the UCS Manager
-    def initialize(params, verify_ssl = true)
-      @verify_ssl = verify_ssl
+    def initialize(params)
       required_params(params)
       @username = params[:username]
       @password = params[:password]
       @hostname = params[:hostname]
+      @verify_ssl = params[:verify_ssl]
       @url = "https://#{@hostname}/nuova"
     end
 
-    def mac_pool
+    def macpool
       extend MacPool
+    end
+
+    def wwnnpool
+      extend WwnnPool
+    end
+
+    def wwpnpool
+      extend WwpnPool
     end
   end
 end
