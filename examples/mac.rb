@@ -20,6 +20,8 @@ ucs.macpool.all_macs.each do |mac|
   puts mac.to_yaml
 end
 
-puts ucs.macpool.mac_pool('org-root/mac-pool-mac-pool-1').to_yaml
+puts ucs.macpool.mac_pool(
+  'org-root/mac-pool-mac-pool-1'
+).to_yaml
 
 ucs.logout
