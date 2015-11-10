@@ -1,10 +1,5 @@
 # Access Mac Pool information from UCS
 module MacPool
-  def login_check
-    return true if self.logged_in?
-    fail 'Client is not logged in.'
-  end
-
   # Return all macs defined in the UCS Manager
   def all_macs
     Ucsman::Request.config_resolve_class(
@@ -24,6 +19,7 @@ module MacPool
     )[:configs][:macpool_pool]
   end
 
+  # Return mac pool specified by dn
   def mac_pool(dn)
     Ucsman::Request.config_resolve_children(
       client: self,
