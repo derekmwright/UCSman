@@ -12,20 +12,16 @@ ucs = Ucsman::Client.new(
 
 ucs.login
 
-pools = Ucsman::MacPool.get_all_pools(ucs)
-
-pools.each do |pool|
+ucs.mac_pool.all_pools.each do |pool|
   puts pool.to_yaml
 end
 
-macs = Ucsman::MacPool.get_all_macs(ucs)
-
-macs.each do |mac|
+ucs.mac_pool.all_macs.each do |mac|
   puts mac.to_yaml
 end
 
-puts Ucsman::MacPool.get_mac_pool(
-  ucs, 'org-root/mac-pool-mac-pool-1'
+puts ucs.mac_pool.mac_pool(
+  'org-root/mac-pool-mac-pool-1'
 ).to_yaml
 
 ucs.logout

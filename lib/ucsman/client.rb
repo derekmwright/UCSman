@@ -73,6 +73,7 @@ module Ucsman
       return false unless response[:status] == 'success'
       @cookie = nil
       @details = nil
+      true
     end
 
     # Wrapper for RestClient.post allowing
@@ -107,6 +108,10 @@ module Ucsman
       @password = params[:password]
       @hostname = params[:hostname]
       @url = "https://#{@hostname}/nuova"
+    end
+
+    def mac_pool
+      extend MacPool
     end
   end
 end

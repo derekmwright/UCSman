@@ -23,20 +23,20 @@ module Ucsman
     end
 
     def self.config_resolve_children_prepare(params)
-        if params[:class_id]
-          return {
-            'cookie' => params[:client].cookie,
-            'inHierarchical' => params[:recursive],
-            'classId' => params[:class_id].to_s.camelize(:lower),
-            'inDn' => params[:dn]
-          }
-        else
-          return {
-            'cookie' => params[:client].cookie,
-            'inHierarchical' => params[:recursive],
-            'inDn' => params[:dn]
-          }
-        end
+      if params[:class_id]
+        return {
+          'cookie' => params[:client].cookie,
+          'inHierarchical' => params[:recursive],
+          'classId' => params[:class_id].to_s.camelize(:lower),
+          'inDn' => params[:dn]
+        }
+      else
+        return {
+          'cookie' => params[:client].cookie,
+          'inHierarchical' => params[:recursive],
+          'inDn' => params[:dn]
+        }
+      end
     end
 
     # Query configResolveClass
