@@ -26,6 +26,10 @@ class UcsmanTest < Minitest::Test
     puts @ucs.logged_in?
   end
 
+  def test_that_it_resoinds_to_system
+    assert_respond_to(@ucs, 'system')
+  end
+
   def test_that_it_responds_to_macpool
     assert_respond_to(@ucs, 'macpool')
   end

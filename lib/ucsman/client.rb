@@ -112,6 +112,14 @@ module Ucsman
       @url = "https://#{@hostname}/nuova"
     end
 
+    def system
+      Ucsman::Request.config_resolve_class(
+        client: self,
+        class_id: :top_system,
+        recursive: false
+      )[:configs]
+    end
+
     def macpool
       extend MacPool
     end
