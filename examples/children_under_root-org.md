@@ -3,6 +3,7 @@ References
 
 The following YAML list is the children under the root-org dn, this non-recursive and only the next level down.
 
+```yaml
 ---
 :cookie: yes_please
 :response: 'yes'
@@ -661,3 +662,4 @@ The following YAML list is the children under the root-org dn, this non-recursiv
     :policy_level: '0'
     :policy_owner: local
     :type: SEL
+```
